@@ -36,4 +36,9 @@ public class HelloWorldEndpoints {
         return new HelloClass(name,period);
     }
 
+    // Declare this method as a method available externally through Endpoints
+    @ApiMethod(name ="greetByAge", path = "greetByAge", httpMethod = HttpMethod.GET)
+    public HelloClass greetByAge(@Named("name") String name, @Named("age") int age){
+        return new HelloClass(name,age);
+    }
 }

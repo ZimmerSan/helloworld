@@ -14,6 +14,10 @@ public class HelloClass {
         this.message = "Hello " + name + "! Your period is " + period;
     }
 
+    public HelloClass (String name, int age) {
+        this.message = "Hello " + name + "! Your age: " + age;
+    }
+
     public String getMessage() {
         return message;
     }

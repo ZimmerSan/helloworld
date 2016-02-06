@@ -58,6 +58,12 @@ function enableButtons () {
 
 	// Update the button label now that the button is active
 	btn.value="Click me for a poriodic greeting";
+
+	btn = document.getElementById("input_greet_by_age");
+	btn.onclick=function(){greetByAge();};
+
+	// Update the button label now that the button is active
+	btn.value="Click me for a greeting with your age";
 }
 
 /*
@@ -98,6 +104,13 @@ function greetByPeriod(){
 	var name = document.getElementById("name_field").value;
 	var period = document.getElementById("period_field").value;
 	var request = gapi.client.helloworldendpoints.greetByPeriod({'name': name, 'period':period});
+	request.execute(sayHelloCallback);
+}
+
+function greetByAge(){
+	var name = document.getElementById("name_field").value;
+	var age = document.getElementById("age_field").value;
+	var request = gapi.client.helloworldendpoints.greetByAge({'name': name, 'age':age});
 	request.execute(sayHelloCallback);
 }
 
